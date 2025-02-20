@@ -2,83 +2,99 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
 
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-
-        android:text="Payment Gateway Demo"
-
-        android:textSize="20dp"
-
-        android:textAlignment="center"
-
-        android:minHeight="120dp"
 
         android:layout_gravity="center"
 
         android:gravity="center"
 
+        android:minHeight="120dp"
+
+        android:text="Place Order"
+
+        android:textAlignment="center"
+
+        android:textSize="20dp"
+
         />
 
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone"
+        android:inputType="phone" />
 
 
     <EditText
 
-        android:layout_margin="6dp"
-
         android:id="@+id/edit_amount"
-
-        android:inputType="number"
 
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
 
-        android:hint="Enter Amount" />
+        android:layout_margin="6dp"
 
+        android:hint="Enter Amount"
+
+        android:inputType="number" />
 
 
     <Button
+
+        android:id="@+id/btn_pay"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="12dp"
 
         android:layout_marginTop="40dp"
 
         android:layout_marginEnd="12dp"
 
-        android:layout_marginStart="12dp"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:text="Pay Now !!"
-
-        android:id="@+id/btn_pay"/>
-
+        android:text="Pay Now !!" />
 
 
     <TextView
 
+        android:id="@+id/paymentStatus"
+
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
 
-        android:textAlignment="center"
-
-        android:textSize="14sp"
-
         android:layout_margin="8dp"
 
-        android:id="@+id/paymentStatus"
+        android:text="Payment Status"
 
-        android:text="Payment Status"/>
+        android:textAlignment="center"
 
+        android:textSize="14sp" />
 
 
 </LinearLayout>
