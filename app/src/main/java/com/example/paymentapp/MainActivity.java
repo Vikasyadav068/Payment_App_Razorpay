@@ -42,28 +42,29 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
     }
 
-public void startPayment(int Amount){
-        Checkout checkout=new Checkout();
-        checkout.setKeyID("enter your test  here");
+    public void startPayment(int Amount) {
+        Checkout checkout = new Checkout();
+        checkout.setKeyID("enter your razorpay key here");
 
         try {
-            JSONObject jsonObject=new JSONObject();
-            jsonObject.put("name", "Razor pay demo");
-            jsonObject.put("description","buy a food for me");
-            jsonObject.put("currency","INR");
-            jsonObject.put("amount","Amount*100");
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("name", "Razorpay Demo");
+            jsonObject.put("description", "Buy a food for me");
+            jsonObject.put("currency", "INR");
+            jsonObject.put("amount", Amount * 100); // Corrected
 
-            JSONObject retryObj=new JSONObject();
-            retryObj.put("enabled",true);
-            retryObj.put("retry",retryObj);
+            JSONObject retryObj = new JSONObject();
+            retryObj.put("enabled", true);
+            retryObj.put("max_count", 3); // Corrected
 
-            checkout.open(MainActivity.this,jsonObject);
+            jsonObject.put("retry", retryObj); // Corrected
 
+            checkout.open(MainActivity.this, jsonObject);
+        } catch (Exception e) {
+            e.printStackTrace(); // Error log karne ke liye
         }
-        catch (Exception e){
+    }
 
-        }
-}
 
     @Override
     public void onPaymentSuccess(String s) {
